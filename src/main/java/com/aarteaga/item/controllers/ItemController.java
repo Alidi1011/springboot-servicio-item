@@ -14,7 +14,7 @@ import com.aarteaga.item.models.service.ItemService;
 @RestController
 public class ItemController {
 	@Autowired
-	@Qualifier("serviceRestTemplate")
+	@Qualifier("serviceFeign")
 	private ItemService itemService;
 	
 	@GetMapping("/listar")
