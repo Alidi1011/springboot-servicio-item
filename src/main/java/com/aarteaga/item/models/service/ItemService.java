@@ -3,7 +3,7 @@ package com.aarteaga.item.models.service;
 import java.util.List;
 
 import com.aarteaga.item.models.Item;
-import com.aarteaga.item.models.Producto;
+import com.aarteaga.commons.models.entity.Producto;
 
 public interface ItemService {
 	public List<Item> findAll();

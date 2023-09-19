@@ -1,5 +1,7 @@
 package com.aarteaga.item.models;
 
+import com.aarteaga.commons.models.entity.Producto;
+
 public class Item {
 
 	private Producto producto;

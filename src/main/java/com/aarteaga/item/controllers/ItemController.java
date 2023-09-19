@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import com.aarteaga.item.models.Producto;
+import com.aarteaga.commons.models.entity.Producto;
 import com.aarteaga.item.models.Item;
 import com.aarteaga.item.models.service.ItemService;
 
@@ -46,7 +46,7 @@ public class ItemController {
 	private CircuitBreakerFactory cbFactory;
 	
 	@Autowired
-	@Qualifier("serviceRestTemplate")
+	@Qualifier("serviceFeign")
 	private ItemService itemService;
 	
 	@Value("${configuracion.texto}")

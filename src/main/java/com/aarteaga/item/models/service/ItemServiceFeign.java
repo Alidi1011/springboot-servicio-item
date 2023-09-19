@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.aarteaga.item.clientes.ProductoClienteRest;
 import com.aarteaga.item.models.Item;
-import com.aarteaga.item.models.Producto;
+import com.aarteaga.commons.models.entity.Producto;
 
 @Service("serviceFeign")
 @Primary
@@ -19,7 +19,7 @@ public class ItemServiceFeign implements ItemService {
 
 	@Override
 	public List<Item> findAll() {
-		return clienteFeign.listar().stream().map(p -> new Item(p, 2)).collect(Collectors.toList());
+		return clienteFeign.listar().stream().map(p -> new Item(p, 3)).collect(Collectors.toList());
 	}
 
 	@Override
@@ -30,20 +30,17 @@ public class ItemServiceFeign implements ItemService {
 
 	@Override
 	public Producto save(Producto producto) {
-		// TODO Auto-generated method stub
-		return null;
+		return clienteFeign.crear(producto);
 	}
 
 	@Override
 	public Producto update(Producto producto, Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return clienteFeign.update(producto, id);
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		
+		clienteFeign.eliminar(id);
 	}
 
 }

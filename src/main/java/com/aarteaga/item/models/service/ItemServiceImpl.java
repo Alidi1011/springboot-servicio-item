@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.aarteaga.item.models.Item;
-import com.aarteaga.item.models.Producto;
+import com.aarteaga.commons.models.entity.Producto;
 
 @Service("serviceRestTemplate")
 public class ItemServiceImpl implements ItemService {
@@ -27,7 +27,7 @@ public class ItemServiceImpl implements ItemService {
 	public List<Item> findAll() {
 		List<Producto> productos = Arrays.asList(clienteRest.getForObject("http://servicio-productos/listar", Producto[].class));
 		
-		return productos.stream().map(p -> new Item(p, 2)).collect(Collectors.toList());
+		return productos.stream().map(p -> new Item(p, 1)).collect(Collectors.toList());
 	}
 
 	@Override
